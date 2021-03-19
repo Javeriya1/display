@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="main.css" />
+  <title>Display-Memorial-Butterfly</title>
+</head>
+
+<body>
+  <!-- display form -->
+  <div class="image">
+    <img src="butterfly.jpg" alt="butterfly">
+  </div>
+       
+  <div class="container-contact">
+    <div class="wrap">
+      <form class="contact-form validate-form" id="memo-display">
+        <div class="main-list" id="msgs">
+          <div class="list">
+          </div>
+        </div>
+        <button type="submit">DOWNLOAD</button>
+      </form>
+   </div>
+   </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    
+    var firebaseConfig = {
+  apiKey: "AIzaSyBV5bpedzxtAtc7nFbmdxxQDeE9zodXfWM",
+  authDomain: "jquery-web-form.firebaseapp.com",
+  projectId: "jquery-web-form",
+  storageBucket: "jquery-web-form.appspot.com",
+  messagingSenderId: "470217699665",
+  appId: "1:470217699665:web:61ec65f22a970128b5e370",
+  measurementId: "G-S2ZEC4Y2J7"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // make firestore references
+
+    var db = firebase.firestore();
+
+    // update firestore settings
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

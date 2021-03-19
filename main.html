@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <!-- phone masking -->
+  <script src="https://unpkg.com/jquery-input-mask-phone-number@1.0.14/dist/jquery-input-mask-phone-number.js"></script>
+
+  <title>Memorial-Butterfly</title>
+</head>
+
+<body>
+  <!-- Input form -->
+  <div class="image">
+    <img src="butterfly.jpg" alt="butterfly">
+  </div>
+
+  <div class="container-contact">
+    <div class="wrap-contact">
+      <form class="contact-form validate-form" id="memoForm">
+        <div class="contact-form-title">Please complete the entry form below:</div>
+
+        <!-- <div class="wrapper"> -->
+        <!-- <div class="contact"> -->
+        <div class="alert">Thank you</div>
+
+        <!-- <span>YOUR NAME</span> -->
+        <br><br>
+        <label> YOUR NAME<span style="color: red"> *</span>
+          <form id="memoForm">
+            <div class="row">
+              <div class="column">
+                <input type="text" name="fname" id="fname" placeholder="First Name" required />
+                <span id="usercheck" style="color: red;" > 
+                  **Username is missing 
+                </span> 
+              </div>
+              <div class="column">
+                <input type="text" name="lname" id="lname" placeholder="Last Name" />
+                <!-- <small id="userchecks" style="color: red;" > 
+                
+                </small>  -->
+              </div>
+            </div>
+            
+            <label>EMAIL ADDRESS<span style="color: red"> *</span></label>
+            <input type="email" name="email" id="email" required placeholder="Eg: example@email.com"
+              />
+            <span id="emailcheck" style="color: red;">**Email address missing</span>
+      
+            <br><br>
+            <label>PHONE<span style="color: red"> *</span></label>
+            <input type="text" name="phone" id="phone" required placeholder="(xxx) xxx-xxxx" maxlength=14 />
+            <span id="phonecheck" style="color: red;">**Phone number missing</span>
+            <br><br>
+            
+           
+            
+            <label>ADDRESS<span style="color: red"> *</span></label>
+            <input type="text" name="address" id="address" required />
+            <span id="addr" style="color: red;" > **address is missing
+            </span>
+            
+              
+              
+             <br><br>
+            <!-- <label>Fill the Answer which shown in below text <span style="color: red"> *</span>
+            </label> -->
+            <div id="captcha"></div><br>
+            <input type="text" name="captcha" id="texts" placeholder="Fill the answer" required />
+            <span id="captchacheck" style="color: red;" >
+            </span>
+           <br><br>
+           <input type="checkbox" class="check" id="checks" required> I am over 18<br>
+            <input type="checkbox" class="check" id="check" required> I agree to the
+            <a href="https://www.zvky.com/" style="color:dodgerblue"><b>Contest Rules</b></a><br><br>
+            <div id="result"></div>
+            <div id="failed"></div>
+           
+
+            <!-- <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
+
+            <button type="submit" id="mybtn" disabled = "disabled">Submit</button>
+
+
+          </form>
+
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var firebaseConfig = {
+  apiKey: "AIzaSyBV5bpedzxtAtc7nFbmdxxQDeE9zodXfWM",
+  authDomain: "jquery-web-form.firebaseapp.com",
+  projectId: "jquery-web-form",
+  storageBucket: "jquery-web-form.appspot.com",
+  messagingSenderId: "470217699665",
+  appId: "1:470217699665:web:61ec65f22a970128b5e370",
+  measurementId: "G-S2ZEC4Y2J7"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // make firestore references
+
+    var db = firebase.firestore();
+
+    // update firestore settings
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
